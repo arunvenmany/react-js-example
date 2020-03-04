@@ -27,42 +27,37 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### `Build and Run in docker in local`
+ 
+docker login http://aksspringreacthandson.azurecr.io -u aksspringreacthandson -p <password>
+docker build -t aksspringreacthandson.azurecr.io/react-app:1.0.1 .
+docker run -p 5000:5000 aksspringreacthandson.azurecr.io/react-app:1.0.1
+docker push aksspringreacthandson.azurecr.io/react-app:1.0.1
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### `Deploy to Kubernetes from Local using Helm`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+helm install --name=react-app ./infra/helm/ --values=./infra/helm/values.yaml --namespace=handson
+NAME:   react-app
+LAST DEPLOYED: Wed Mar  4 21:58:21 2020
+NAMESPACE: handson
+STATUS: DEPLOYED
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+RESOURCES:
+==> v1/Service
+NAME              TYPE          CLUSTER-IP  EXTERNAL-IP  PORT(S)       AGE
+react-js-app-svc  LoadBalancer  10.0.6.165  <pending>    80:31694/TCP  1s
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+==> v1/Deployment
+NAME          DESIRED  CURRENT  UP-TO-DATE  AVAILABLE  AGE
+react-js-app  2        2        2           0          1s
 
-## Learn More
+==> v1/Pod(related)
+NAME                          READY  STATUS             RESTARTS  AGE
+react-js-app-c94df5947-vmjwm  0/1    ContainerCreating  0         0s
+react-js-app-c94df5947-x84s2  0/1    Pending            0         0s
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+$ kubectl get pods --namespace handson
+NAME                           READY   STATUS    RESTARTS   AGE
+react-js-app-c94df5947-vmjwm   1/1     Running   0          76s
+react-js-app-c94df5947-x84s2   1/1     Running   0          76s
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
