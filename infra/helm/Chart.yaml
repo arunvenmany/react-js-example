@@ -1,0 +1,10 @@
+apiVersion: v1
+name: react-js-example
+version: 1
+description:  User CRUD Operations React.js
+home: https://github.com/arunvenmany/react-js-example
+sources:
+  - https://github.com/arunvenmany/react-js-example
+maintainers:
+  - name: Arun Venmany
+    email: arunvenmany@outlook.com

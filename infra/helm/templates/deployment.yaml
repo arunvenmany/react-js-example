@@ -1,0 +1,25 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: {{ .Values.appName }}
+  namespace: handson
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: {{ .Values.appName }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.appName }}
+    spec:
+      containers:
+        - name: {{ .Values.appName }}
+          image: {{ template "docker-image" . }}
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+      imagePullSecrets: 
+       - name: regcred
+      restartPolicy: Always
