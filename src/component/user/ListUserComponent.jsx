@@ -37,6 +37,7 @@ class ListUserComponent extends Component {
 
     editUser(id) {
         window.localStorage.setItem("userId", id);
+        console.log("id is"+window.localStorage.getItem("userId"));
         this.props.history.push('/edit-user');
     }
 

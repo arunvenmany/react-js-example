@@ -20,6 +20,7 @@ class AddUserComponent extends Component{
     saveUser = (e) => {
         e.preventDefault();
         let user = {username: this.state.username, password: this.state.password, firstName: this.state.firstName, lastName: this.state.lastName, age: this.state.age, salary: this.state.salary};
+        console.log("id is"+window.localStorage.getItem("userId"));
         ApiService.addUser(user)
             .then(res => {
                 this.setState({message : 'User added successfully.'});
