@@ -8,8 +8,8 @@ class AddUserComponent extends Component{
         this.state ={
             username: '',
             password: '',
-            firstName: '',
-            lastName: '',
+            firstname: '',
+            lastname: '',
             age: '',
             salary: '',
             message: null
@@ -19,13 +19,17 @@ class AddUserComponent extends Component{
 
     saveUser = (e) => {
         e.preventDefault();
-        let user = {username: this.state.username, password: this.state.password, firstName: this.state.firstName, lastName: this.state.lastName, age: this.state.age, salary: this.state.salary};
+        let user = {username: this.state.username, password: this.state.password, firstname: this.state.firstname, lastname: this.state.lastname, age: this.state.age, salary: this.state.salary};
         console.log("id is"+window.localStorage.getItem("userId"));
         ApiService.addUser(user)
             .then(res => {
                 this.setState({message : 'User added successfully.'});
                 this.props.history.push('/users');
-            });
+            })
+            .catch(err => {
+                this.setState({message : 'Error while saving user!!'});
+                console.log(err);
+              });
     }
 
     onChange = (e) =>
@@ -48,12 +52,12 @@ class AddUserComponent extends Component{
 
                 <div className="form-group">
                     <label>First Name:</label>
-                    <input placeholder="First Name" name="firstName" className="form-control" value={this.state.firstName} onChange={this.onChange}/>
+                    <input placeholder="First Name" name="firstname" className="form-control" value={this.state.firstname} onChange={this.onChange}/>
                 </div>
 
                 <div className="form-group">
                     <label>Last Name:</label>
-                    <input placeholder="Last name" name="lastName" className="form-control" value={this.state.lastName} onChange={this.onChange}/>
+                    <input placeholder="Last name" name="lastname" className="form-control" value={this.state.lastname} onChange={this.onChange}/>
                 </div>
 
                 <div className="form-group">
@@ -68,6 +72,7 @@ class AddUserComponent extends Component{
 
                 <button className="btn btn-success" onClick={this.saveUser}>Save</button>
             </form>
+                <h4 className="text-left">{this.state.message}</h4>
     </div>
         );
     }

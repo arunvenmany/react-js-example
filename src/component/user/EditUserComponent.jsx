@@ -7,8 +7,8 @@ class EditUserComponent extends Component {
         super(props);
         this.state ={
             id: '',
-            firstName: '',
-            lastName: '',
+            firstname: '',
+            lastname: '',
             age: '',
             salary: '',
         }
@@ -28,8 +28,8 @@ class EditUserComponent extends Component {
                 this.setState({
                 id: user.id,
                 username: user.username,
-                firstName: user.firstName,
-                lastName: user.lastName,
+                firstname: user.firstname,
+                lastname: user.lastname,
                 age: user.age,
                 salary: user.salary,
                 })
@@ -41,7 +41,7 @@ class EditUserComponent extends Component {
 
     saveUser = (e) => {
         e.preventDefault();
-        let user = {id: this.state.id, password: this.state.password, firstName: this.state.firstName, lastName: this.state.lastName, age: this.state.age, salary: this.state.salary};
+        let user = {id: this.state.id, password: this.state.password, firstname: this.state.firstname, lastname: this.state.lastname, age: this.state.age, salary: this.state.salary};
         ApiService.editUser(user)
             .then(res => {
                 this.setState({message : 'User added successfully.'});
@@ -62,12 +62,12 @@ class EditUserComponent extends Component {
 
                     <div className="form-group">
                         <label>First Name:</label>
-                        <input placeholder="First Name" name="firstName" className="form-control" value={this.state.firstName} onChange={this.onChange}/>
+                        <input placeholder="First Name" name="firstname" className="form-control" value={this.state.firstname} onChange={this.onChange}/>
                     </div>
 
                     <div className="form-group">
                         <label>Last Name:</label>
-                        <input placeholder="Last name" name="lastName" className="form-control" value={this.state.lastName} onChange={this.onChange}/>
+                        <input placeholder="Last name" name="lastname" className="form-control" value={this.state.lastname} onChange={this.onChange}/>
                     </div>
 
                     <div className="form-group">

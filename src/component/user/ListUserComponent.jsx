@@ -55,8 +55,8 @@ class ListUserComponent extends Component {
                     <thead>
                         <tr>
                             <th className="hidden">Id</th>
-                            <th>FirstName</th>
-                            <th>LastName</th>
+                            <th>firstname</th>
+                            <th>lastname</th>
                             <th>UserName</th>
                             <th>Age</th>
                             <th>Salary</th>
@@ -67,8 +67,8 @@ class ListUserComponent extends Component {
                             this.state.users.map(
                         user =>
                                     <tr key={user.id}>
-                                        <td>{user.firstName}</td>
-                                        <td>{user.lastName}</td>
+                                        <td>{user.firstname}</td>
+                                        <td>{user.lastname}</td>
                                         <td>{user.username}</td>
                                         <td>{user.age}</td>
                                         <td>{user.salary}</td>

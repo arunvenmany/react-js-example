@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Live URL:-[http://spring-react-aks-app-ui.eastasia.cloudapp.azure.com](React-Demp-App)
+Live URL:-[http://spring-react-aks-app-ui.eastasia.cloudapp.azure.com](http://spring-react-aks-app-ui.eastasia.cloudapp.azure.com)
 ## Available Scripts
 
 In the project directory, you can run:
