@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const USER_API_BASE_URL = 'http://localhost:8080/users';
+const USER_API_BASE_URL = 'http://spring-react-aks-app-service.eastasia.cloudapp.azure.com/users';
 
 class ApiService {
 

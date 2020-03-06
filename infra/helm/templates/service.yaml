@@ -3,11 +3,11 @@ kind: Service
 apiVersion: v1
 metadata:
   annotations:
-    service.beta.kubernetes.io/azure-dns-label-name: react-app-handson
+    service.beta.kubernetes.io/azure-dns-label-name: spring-react-aks-app-ui
   name: {{ .Values.appName }}-svc
   namespace: handson
 spec:
-  loadBalancerIP: 20.189.121.5
+  loadBalancerIP: 20.189.123.161
   type: LoadBalancer
   ports:
     - port: 80
