@@ -46,7 +46,6 @@ docker push aksspringreacthandson.azurecr.io/react-app:1.0.1
 ```
 helm upgrade react-app --install ./infra/helm/ --set dockerTag=1.0.1 --values=./infra/helm/values.yaml --namespace=handson
 NAME:   react-app
-LAST DEPLOYED: Wed Mar  4 21:58:21 2020
 NAMESPACE: handson
 STATUS: DEPLOYED
 

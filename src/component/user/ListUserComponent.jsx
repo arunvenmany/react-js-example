@@ -74,7 +74,7 @@ class ListUserComponent extends Component {
                                         <td>{user.salary}</td>
                                         <td>
                                             <button className="btn btn-success" onClick={() => this.deleteUser(user.id)}> Delete</button>
-                                            <button className="btn btn-success" onClick={() => this.editUser(user.id)} style={{marginLeft: '20px'}}> Edit</button>
+                                            <button className="btn btn-success" onClick={() => this.editUser(user.id)} style={{marginLeft: '10px'}}> Edit</button>
                                         </td>
                                     </tr>
                             )
