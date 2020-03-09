@@ -50,7 +50,7 @@ class ListUserComponent extends Component {
         return (
             <div>
                 <h2 className="text-center">User Details</h2>
-                <button className="btn btn-danger" style={{width:'100px'}} onClick={() => this.addUser()}> Add User</button>
+                <button className="btn btn-danger" style={{width:'100px'}} onClick={() => this.addUser()}> Add User Details</button>
                 <table className="table table-striped">
                     <thead>
                         <tr>
