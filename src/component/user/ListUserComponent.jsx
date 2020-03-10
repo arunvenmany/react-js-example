@@ -50,7 +50,7 @@ class ListUserComponent extends Component {
         return (
             <div>
                 <h2 className="text-center">User Details</h2>
-                <button className="btn btn-danger" style={{width:'100px'}} onClick={() => this.addUser()}> Add User</button>
+                <button className="btn btn-danger" style={{width:'140px'}} onClick={() => this.addUser()}> Add User Details</button>
                 <table className="table table-striped">
                     <thead>
                         <tr>
@@ -74,7 +74,7 @@ class ListUserComponent extends Component {
                                         <td>{user.salary}</td>
                                         <td>
                                             <button className="btn btn-success" onClick={() => this.deleteUser(user.id)}> Delete</button>
-                                            <button className="btn btn-success" onClick={() => this.editUser(user.id)} style={{marginLeft: '5px'}}> Edit</button>
+                                            <button className="btn btn-success" onClick={() => this.editUser(user.id)} style={{marginLeft: '15px'}}> Edit</button>
                                         </td>
                                     </tr>
                             )
