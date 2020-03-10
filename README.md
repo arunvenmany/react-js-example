@@ -3,7 +3,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Live URL:-[http://spring-react-aks-app-ui.eastasia.cloudapp.azure.com](http://spring-react-aks-app-ui.eastasia.cloudapp.azure.com)
 
 
+
+
 [![Build Status](https://dev.azure.com/reactHandson/spring-react-aks-app/_apis/build/status/react-app-devops%20-%20CI?branchName=master)](https://dev.azure.com/reactHandson/spring-react-aks-app/_build/latest?definitionId=1&branchName=master)
+
+Jenkins URL :-http://jenkins-service.eastasia.cloudapp.azure.com/job/react-app-deployment/
 
 ## Available Scripts
 
