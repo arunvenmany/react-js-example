@@ -36,7 +36,7 @@ volumes: [
       container('helm') {
         sh """
         helm init --client-only --skip-refresh
-        helm upgrade  react-app ./infra/helm/ --values infra/helm/values.yaml --set \\"dockerTag=${gitCommit}\\"   --namespace handson --install
+        helm upgrade  react-app ./infra/helm/ --values infra/helm/values.yaml --set \\"dockerTag=${gitCommit}\\"   --namespace handson --install --wait  --force --recreate-pods
         """
      }
     }
