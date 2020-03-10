@@ -1,3 +1,2 @@
 dockerImage: aksspringreacthandson.azurecr.io/react-app
-dockerTag: 1.0.1
 appName: react-js-app
